@@ -29,12 +29,16 @@
             font-weight: 700; margin-right: 8px; flex-shrink: 0;
         }
         nav a { transition: color 0.2s; }
+        #main-nav { position: sticky; top: 0; z-index: 999; background: rgba(255,255,255,0.97); backdrop-filter: blur(6px); box-shadow: 0 1px 0 #e5e7eb; }
+        #back-top { position: fixed; bottom: 2rem; right: 2rem; width: 44px; height: 44px; background: #4f46e5; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; cursor: pointer; opacity: 0; pointer-events: none; transition: opacity .3s, transform .3s; z-index: 999; box-shadow: 0 4px 12px rgba(79,70,229,.35); text-decoration: none; }
+        #back-top.show { opacity: 1; pointer-events: auto; }
+        #back-top:hover { transform: translateY(-3px); }
     </style>
 </head>
 <body class="bg-white antialiased">
 
 <!-- NAV -->
-<section class="w-full px-6 bg-white select-none">
+<section id="main-nav" class="w-full px-6 select-none">
     <div class="mx-auto max-w-7xl">
         <nav class="flex items-center justify-between h-20 border-b border-gray-200">
             <a href="#" class="text-2xl font-black text-gray-900">CmsPush<span class="logo-dot">.</span></a>
@@ -309,6 +313,15 @@
             class="mt-4 sm:mt-0 text-indigo-600 hover:underline text-sm font-medium">GitHub →</a>
     </div>
 </footer>
+
+<a id="back-top" href="#" title="Torna su">↑</a>
+
+<script>
+// Torna su
+const bt = document.getElementById('back-top');
+window.addEventListener('scroll', () => { bt.classList.toggle('show', window.scrollY > 300); });
+bt.addEventListener('click', e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+</script>
 
 <script>
 const TRACKER_ENDPOINT = "https://script.google.com/macros/s/AKfycbzS_BXbhdL5lonAPSMcLF0d0zxBgf4L38mxBrhGMSsKrDKp-vlYMCxuWmcUURnu6Vxn/exec";
