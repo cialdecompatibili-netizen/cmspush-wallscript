@@ -30,9 +30,9 @@
         }
         nav a { transition: color 0.2s; }
         #main-nav { position: sticky; top: 0; z-index: 999; background: rgba(255,255,255,0.97); backdrop-filter: blur(6px); box-shadow: 0 1px 0 #e5e7eb; }
-        #back-top { position: fixed; bottom: 2rem; right: 2rem; width: 44px; height: 44px; background: #4f46e5; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; cursor: pointer; opacity: 0; pointer-events: none; transition: opacity .3s, transform .3s; z-index: 999; box-shadow: 0 4px 12px rgba(79,70,229,.35); text-decoration: none; }
-        #back-top.show { opacity: 1; pointer-events: auto; }
-        #back-top:hover { transform: translateY(-3px); }
+        #back-top { position: fixed !important; bottom: 2rem !important; right: 2rem !important; width: 44px !important; height: 44px !important; background: #4f46e5 !important; color: #fff !important; border-radius: 50% !important; display: flex !important; align-items: center !important; justify-content: center !important; font-size: 1.3rem !important; line-height: 1 !important; cursor: pointer !important; opacity: 0; pointer-events: none; transition: opacity .3s, transform .3s; z-index: 9999 !important; box-shadow: 0 4px 12px rgba(79,70,229,.4) !important; text-decoration: none !important; border: none !important; padding: 0 !important; }
+        #back-top.show { opacity: 1 !important; pointer-events: auto !important; }
+        #back-top:hover { transform: translateY(-3px); background: #4338ca !important; }
     </style>
 </head>
 <body class="bg-white antialiased">
@@ -40,7 +40,7 @@
 <!-- NAV -->
 <section id="main-nav" class="w-full px-6 select-none">
     <div class="mx-auto max-w-7xl">
-        <nav class="flex items-center justify-between h-20 border-b border-gray-200">
+        <nav class="flex items-center justify-between h-20">
             <a href="#" class="text-2xl font-black text-gray-900">CmsPush<span class="logo-dot">.</span></a>
             <div class="hidden md:flex items-center gap-8 text-sm font-medium">
                 <a href="#about" class="text-indigo-600">Chi è</a>
@@ -52,8 +52,12 @@
                 </a>
             </div>
         </nav>
+    </div>
+</section>
 
-        <!-- HERO -->
+<!-- HERO -->
+<section class="w-full px-6">
+    <div class="mx-auto max-w-7xl">
         <div class="py-24 text-center max-w-3xl mx-auto">
             <h1 class="text-6xl font-extrabold tracking-tight text-gray-900 leading-tight">
                 Il CMS per<br>
